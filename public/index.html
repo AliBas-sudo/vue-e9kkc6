@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Vue App</title>
+
+    <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+  </head>
+  <body>
+    <noscript>
+      <strong
+        >We're sorry but Vue App doesn't work properly without JavaScript
+        enabled. Please enable it to continue.</strong
+      >
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+
+    <video-js
+      id="video_id"
+      class="vjs-default-skin"
+      controls
+      preload="auto"
+      width="1280"
+      height="720"
+      muted="muted"
+    >
+      <!-- <source src="http://10.200.148.73:5432/playlist.m3u8" type="application/x-mpegURL"> -->
+      
+      <!-- <source src="http://10.200.148.71:5432/web/tanteo-mvr_hls.m3u8" type="application/x-mpegURL"> -->
+     <!-- <source src="http://10.200.148.71:5432/tanteo-mvr_hls.m3u8" type="application/x-mpegURL"> -->
+      
+
+      <!-- <source src="http://127.0.0.1:8586/from_hls/playlist.m3u8" type="application/x-mpegURL"> -->
+      <source
+      src="https://customer-m033z5x00ks6nunl.cloudflarestream.com/b236bde30eb07b9d01318940e5fc3eda/manifest/video.m3u8"
+        type="application/x-mpegURL"/> 
+
+    </video-js>
+
+    <script src="https://unpkg.com/video.js/dist/video.js"></script>
+    <script src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>
+    <script>
+      var player = videojs('video_id').ready(function() {
+         this.play();
+      });
+    </script>
+
+
+  </body>
+</html>
